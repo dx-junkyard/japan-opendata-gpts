@@ -1,0 +1,11 @@
+springdoc:
+  paths-to-exclude: /.well-known/**
+  swagger-ui:
+    default-model-expand-depth: 3
+  api-docs:
+    path: /openapi.json
+    resolve-schema-properties: true
+  extension:
+    version: 1.0.0
+    title: "Japanese OpenData Search API"
+    description: "Japanese OpenData Search API"

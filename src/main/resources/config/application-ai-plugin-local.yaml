@@ -1,0 +1,6 @@
+ai-plugin:
+  api:
+    url: http://localhost:8080/openapi.json
+  logo-url: http://localhost:8080/logo.png
+  contact-email: support@example.com
+  legal-info-url: http://www.example.com/legal

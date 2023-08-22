@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: japan-opendata
+  main:
+    banner-mode: off
+  messages:
+    encoding: UTF-8
+  web:
+    locale: ja_JP
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+      write-enums-using-to-string: true
+  profiles:
+    default: local
+    group:
+      local:
+        - doc
+        - doc-local
+        - devtools
+        - open-data-japan
+        - ai-plugin
+        - ai-plugin-local
+      prod:
+        - doc
+        - doc-prod
+        - open-data-japan
+        - ai-plugin
+        - ai-plugin-prod

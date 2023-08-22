@@ -1,0 +1,5 @@
+repository:
+  open-data:
+    japan:
+      url: https://search.ckan.jp/backend/api/
+      search-open-data-path: package_search
