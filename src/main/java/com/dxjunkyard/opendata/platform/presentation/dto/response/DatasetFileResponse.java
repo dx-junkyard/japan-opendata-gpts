@@ -10,8 +10,6 @@ import java.io.Serializable;
 @Builder
 public record DatasetFileResponse(
     @NonNull String title,
-    @NonNull
-    String description,
     @Nullable String format,
     @NonNull String url
 ) implements Serializable {

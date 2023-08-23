@@ -45,27 +45,18 @@ public record OpenDataSearchResponse(
     @JsonIgnoreProperties(ignoreUnknown = true)
     public record ResultResponse(
         String xckanTitle,
-        String name,
-        String url,
+        String xckanSiteName,
+        String xckanSiteUrl,
         String type,
-        String updated,
-        String created,
-        List<ResourceResponse> resources,
-        List<GroupResponse> groupsa
+        String metadataModified,
+        String metadataCreated,
+        List<ResourceResponse> resources
     ) {
-        public LocalDateTime getMetadataModified() {
-            return LocalDateTime.parse(updated);
-        }
-
-        public LocalDateTime getMetadataCreated() {
-            return LocalDateTime.parse(created);
-        }
-
         @NonNull
         public Dataset toDataset() {
             return Dataset.builder()
                 .title(xckanTitle)
-                .datasetUrl(Optional.ofNullable(url).filter(StringUtils::isNotBlank).orElse(null))
+                .datasetUrl(Optional.ofNullable(xckanSiteUrl).filter(StringUtils::isNotBlank).orElse(null))
                 .files(resources.stream()
                     .map(ResourceResponse::toDatasetFile)
                     .toList())
@@ -94,23 +85,5 @@ public record OpenDataSearchResponse(
                 .url(url)
                 .build();
         }
-    }
-
-    @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public record GroupResponse(
-        String id,
-        String name,
-        String title
-    ) {
-    }
-
-    @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public record OrganizationResponse(
-        String id,
-        String name,
-        String title
-    ) {
     }
 }
