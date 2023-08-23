@@ -73,11 +73,17 @@ public record OpenDataSearchResponse(
         String name,
         String format,
         String url,
+        String downloadUrl,
         String updated,
         String created
     ) {
 
         public DatasetFile toDatasetFile() {
+
+            final var url = Optional.ofNullable(downloadUrl)
+                .filter(StringUtils::isNotBlank)
+                .orElse(this.url);
+
             return DatasetFile.builder()
                 .title(name)
                 .format(format)
