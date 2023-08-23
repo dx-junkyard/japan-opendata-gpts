@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://japan-opendata-chatgpt-plugin.fooqoo56.com/logo.png" height="200px" width="200px"/>
+    <img src="https://japan-opendata-chatgpt-plugin.s3.amazonaws.com/logo.png" height="200px" width="200px"/>
     <br />
     <h3>Japan OpenData for ChatGPT Plugin</h3>
     <br />
