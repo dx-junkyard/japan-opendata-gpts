@@ -47,6 +47,7 @@ public record OpenDataSearchResponse(
         String xckanTitle,
         String xckanSiteName,
         String xckanSiteUrl,
+        String xckanDescription,
         String type,
         String metadataModified,
         String metadataCreated,
@@ -56,6 +57,7 @@ public record OpenDataSearchResponse(
         public Dataset toDataset() {
             return Dataset.builder()
                 .title(xckanTitle)
+                .description(Optional.ofNullable(xckanDescription).filter(StringUtils::isNotBlank).orElse(null))
                 .datasetUrl(Optional.ofNullable(xckanSiteUrl).filter(StringUtils::isNotBlank).orElse(null))
                 .files(resources.stream()
                     .map(ResourceResponse::toDatasetFile)
