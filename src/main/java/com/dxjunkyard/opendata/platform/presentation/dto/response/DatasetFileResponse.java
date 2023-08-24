@@ -21,4 +21,12 @@ public record DatasetFileResponse(
             .url(datasetFile.getUrl())
             .build();
     }
+
+    public static DatasetFileResponse from(final DatasetFile datasetFile, final String title) {
+        return DatasetFileResponse.builder()
+            .title(title)
+            .format(datasetFile.getFormat())
+            .url(datasetFile.getUrl())
+            .build();
+    }
 }

@@ -22,7 +22,7 @@ public class RomajiConverterDomainService {
     @NonNull
     public String convert(final String text) {
         return tokenizer.tokenize(text).stream()
-            .map(token -> Objects.nonNull(token.getReading()) ? token.getReading() : token.getSurface())
+            .map(token -> Objects.nonNull(token.getReading()) && !"*".equals(token.getReading()) ? token.getReading() : token.getSurface())
             .map(katakanaToHiraganaTranslator::transliterate)
             .map(hiraganaToRomajiTranslator::transliterate)
             .collect(Collectors.joining(" "));
