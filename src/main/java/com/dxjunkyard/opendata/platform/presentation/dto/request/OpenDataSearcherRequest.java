@@ -1,5 +1,6 @@
 package com.dxjunkyard.opendata.platform.presentation.dto.request;
 
+import com.dxjunkyard.opendata.platform.domain.model.Language;
 import com.dxjunkyard.opendata.platform.domain.model.OpenDataFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -36,7 +37,10 @@ public record OpenDataSearcherRequest(
 
     @Parameter(description = "Search format. If you want to search for multiple formats, separate them with spaces. Default is unspecified.")
     @Nullable
-    String format
+    String format,
+
+    @Parameter(description = "Asked language. select only JAPANESE or OTHER.", required = true)
+    @NonNull Language language
 ) {
 
     public OpenDataSearcherRequest(
@@ -44,13 +48,15 @@ public record OpenDataSearcherRequest(
         final String keyword,
         final String organization,
         final String category,
-        final String format
+        final String format,
+        final Language language
     ) {
         this.page = Optional.ofNullable(page).orElse(1);
         this.keyword = keyword;
         this.organization = organization;
         this.category = category;
         this.format = format;
+        this.language = language;
     }
 
     @NonNull

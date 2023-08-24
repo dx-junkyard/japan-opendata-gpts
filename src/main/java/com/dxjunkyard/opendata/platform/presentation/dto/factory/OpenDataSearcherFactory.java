@@ -49,6 +49,7 @@ public class OpenDataSearcherFactory {
             .organizationSearchCondition(organizationSearchCondition)
             .categorySearchCondition(categorySearchCondition)
             .formatSet(request.formatSet())
+            .language(request.language())
             .build();
     }
 
@@ -58,10 +59,12 @@ public class OpenDataSearcherFactory {
             .map(dataset -> {
                 final var datasetFileResponse = filterDatasetFileDomainService.filter(dataset.getFiles(), searchCondition)
                     .stream()
-                    .map(DatasetFileResponse::from)
+                    .map(file -> DatasetFileResponse.from(file, searchCondition.isJapanese() ? file.getTitle() : romajiConverterDomainService.convert(file.getTitle())))
                     .toList();
 
-                return DatasetResponse.from(dataset, datasetFileResponse, romajiConverterDomainService.convert(dataset.getTitle()));
+                final var titleEn = searchCondition.isJapanese() ? null : romajiConverterDomainService.convert(dataset.getTitle());
+
+                return DatasetResponse.from(dataset, datasetFileResponse, titleEn);
             }).toList();
 
         return OpenDataSearcherResponse.builder()
