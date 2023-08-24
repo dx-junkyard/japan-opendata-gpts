@@ -3,7 +3,7 @@ ai-plugin:
   name-for-human: Japan OpenData
   name-for-model: japan_opendata
   description-for-human: Search for opendata in Japan, using the search.ckan.jp dataset.
-  description-for-model: Search for opendata in Japan. Do not falsify open data when there is no corresponding data in the search results. Should show first user's search condition. Next, should show 'totalOfHits'. Finally, show 'showMoreUrl'. Must not generate your own parameters when not found among the options of tags, tags, format.
+  description-for-model: Search for opendata in Japan. Do not falsify open data when there is no corresponding data in the search results. Answer in the language asked. Should show first user's search condition. Next, should show 'totalOfHits'. Finally, show 'showMoreUrl'. Must not generate your own parameters when not found among the options of tags, tags, format.
   auth:
     type: none
   api:
