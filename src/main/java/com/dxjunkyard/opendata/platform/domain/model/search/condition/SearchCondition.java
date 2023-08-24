@@ -1,5 +1,6 @@
 package com.dxjunkyard.opendata.platform.domain.model.search.condition;
 
+import com.dxjunkyard.opendata.platform.domain.model.Language;
 import com.dxjunkyard.opendata.platform.domain.model.OpenDataFormat;
 import lombok.Builder;
 import lombok.Getter;
@@ -33,6 +34,13 @@ public class SearchCondition {
 
     @NonNull
     private final Set<OpenDataFormat> formatSet;
+
+    @NonNull
+    private final Language language;
+
+    public boolean isJapanese() {
+        return Language.JAPANESE == language;
+    }
 
 
     public boolean existsKeyword() {
