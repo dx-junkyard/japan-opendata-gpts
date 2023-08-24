@@ -56,7 +56,6 @@ In such a case, we will confirm that such request was made by the person himself
 
 FooQoo
 
-Updated on 08, 24, 2023 to revise for English translation.  
-Prescribed on 08, 12, 2023
+Prescribed on 08, 24, 2023.
 
 This document was produced by [KIYAC](https://kiyac.app/).
