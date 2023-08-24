@@ -1,64 +1,62 @@
-# Japan OpenDataのプライバシーポリシー
+# Japan OpenData Privacy Policy
 
-## お客様から取得する情報
+## User Information to be Acquired
 
-当社は、お客様から以下の情報を取得します。
+the Company may acquire from the user(s) (the “User(s)) the following information (the “User Information”):
+Name (including nicknames and pen names)
 
-- 外部サービスでお客様が利用するID、その他外部サービスのプライバシー設定によりお客様が連携先に開示を認めた情報
-- 当社ウェブサイトの滞在時間、入力履歴、購買履歴等の当社ウェブサイトにおけるお客様の行動履歴
-- 当社アプリの起動時間、入力履歴、購買履歴等の当社アプリの利用履歴
-- お客様の位置情報
-- メールアドレス
-- 氏名(ニックネームやペンネームも含む)
+-   E-mail address
+-   ID used by the Users for external services or any other information which the Users authorize the service providers of such external services to disclose by privacy settings of such external services
+-   History of the Users’ activities on the Company’s website, such as time spent on the Company’s website, input history, and purchase history
+-   Usage history of the Company’s applications such as startup time, input history, and purchase history of the Company’s applications
+-   Location information of the Users
 
-## お客様の情報を利用する目的
+## Purpose of Use of User Information
 
-当社は、お客様から取得した情報を、以下の目的のために利用します。
+The Company uses User information for the following purpose:
 
-- 当社サービスに関する登録の受付、お客様の本人確認、認証のため
-- お客様の当社サービスの利用履歴を管理するため
-- 利用料金の決済のため
-- 当社サービスにおけるお客様の行動履歴を分析し、当社サービスの維持改善に役立てるため
-- 当社のサービスに関するご案内をするため
-- お客様からのお問い合わせに対応するため
-- 当社の規約や法令に違反する行為に対応するため
-- 当社サービスの変更、提供中止、終了、契約解除をご連絡するため
-- 当社規約の変更等を通知するため
-- 以上の他、当社サービスの提供、維持、保護及び改善のため
+-   to register or verify the User’s identity and authenticate with the Company’s services (the “Services”)
+-   to manage the User’s usage history of the Services
+-   to settle usage fees
+-   to analyze the User’s activity history in the Services to maintain and improve the Services
+-   to inform the User of the Services
+-   to respond to the User’s inquiries
+-   to correspond to actions that violate the Company's terms and conditions, laws and regulations
+-   to inform the User of changes to, discontinuance of, termination of, or cancellation of the Services
+-   to inform the changes etc. to the Company’s terms and conditions
+-   any other act to provide, maintain, protect and improve the Services
 
-## 安全管理のために講じた措置
+## Third Party Provision
 
-当社が、お客様から取得した情報に関して安全管理のために講じた措置につきましては、末尾記載のお問い合わせ先にご連絡をいただきましたら、法令の定めに従い個別にご回答させていただきます。
+The Company will not provide any information collected from the Users that constitutes personal data (Article 2, Paragraph (6) of Act on the Protection of Personal Information) to any third party (including anyone outside Japan) without obtaining in advance the Users’ consent.
+However, this shall not apply in the following cases:
 
-## 第三者提供
+-   if the Company outsource the handling of personal data
+-   if the Company or the Services are acquired
+-   if the Company jointly use personal data with its business partner (if there is a specific joint use, the details will be announced separately.)
+-   any other cases in which provision of personal data to a third party is permitted by law
 
-当社は、お客様から取得する情報のうち、個人データ（個人情報保護法第１６条第３項）に該当するものついては、あらかじめお客様の同意を得ずに、第三者（日本国外にある者を含みます。）に提供しません。
-但し、次の場合は除きます。
+## Anonymously Processed Information
 
-- 個人データの取扱いを外部に委託する場合
-- 当社や当社サービスが買収された場合
-- 事業パートナーと共同利用する場合（具体的な共同利用がある場合は、その内容を別途公表します。）
-- その他、法律によって合法的に第三者提供が許されている場合
+The Company may produce and use anonymously processed information (this means those set forth in Article 2, paragraph (9) of Act on the Protection of Personal Information, and limited to those constituting anonymously processed information database etc. set forth in Article 2, paragraph (10) of the said Act) by using information acquired from the Users. In such case, the Company will take actions as required by Act on the Protection of Personal Information.
 
-## プライバシーポリシーの変更
+## Amendment to Privacy Policy
 
-当社は、必要に応じて、このプライバシーポリシーの内容を変更します。この場合、変更後のプライバシーポリシーの施行時期と内容を適切な方法により周知または通知します。
+The Company will amend this Privacy Policy as necessary. In such case, the Company will announce or notify, in an appropriate manner, the timing when the amended Privacy Policy will be enforced and the contents thereof.
 
-## お問い合わせ
+## Contact Information
 
-お客様の情報の開示、情報の訂正、利用停止、削除をご希望の場合は、以下のメールアドレスにご連絡ください。
+If you wish to disclose, correct, suspend use of or delete your information, please contact us at the following email address.
 
-### e-mail
+-   e-mail: fooqoofooqoo56@gmail.com
 
-fooqoofooqoo56@gmail.com
+In such a case, we will confirm that such request was made by the person himself/herself, by asking such person to present his/her driver's license or by other means designated by the Company. Requests for disclosure of information, whether such information will be disclosed or not, are subject to a processing fee of 1,000 yen per case at the time of application.
 
-この場合、必ず、運転免許証のご提示等当社が指定する方法により、ご本人からのご請求であることの確認をさせていただきます。なお、情報の開示請求については、開示の有無に関わらず、ご申請時に一件あたり1,000円の事務手数料を申し受けます。
-
-### 事業者の氏名
+### Company name
 
 FooQoo
 
-2023年08月12日 制定
+Updated on 08, 24, 2023 to revise for English translation.  
+Prescribed on 08, 12, 2023
 
-この文書は[KIYAC](https://kiyac.app/)によって生成されました。
-
+This document was produced by [KIYAC](https://kiyac.app/).
