@@ -8,6 +8,7 @@ import com.dxjunkyard.opendata.platform.domain.model.search.condition.KeywordSea
 import com.dxjunkyard.opendata.platform.domain.model.search.condition.OrganizationSearchCondition;
 import com.dxjunkyard.opendata.platform.domain.model.search.condition.SearchCondition;
 import com.dxjunkyard.opendata.platform.domain.service.FilterDatasetFileDomainService;
+import com.dxjunkyard.opendata.platform.domain.service.RomajiConverterDomainService;
 import com.dxjunkyard.opendata.platform.domain.service.UrlBuilderDomainService;
 import com.dxjunkyard.opendata.platform.presentation.dto.request.OpenDataSearcherRequest;
 import com.dxjunkyard.opendata.platform.presentation.dto.response.*;
@@ -27,6 +28,8 @@ public class OpenDataSearcherFactory {
     private final OrganizationNameToIdConverter OrganizationNameToIdConverter;
 
     private final CategoryNameToIdConverter categoryNameToIdConverter;
+
+    private final RomajiConverterDomainService romajiConverterDomainService;
 
     @NonNull
     public SearchCondition build(final OpenDataSearcherRequest request) {
@@ -58,7 +61,7 @@ public class OpenDataSearcherFactory {
                     .map(DatasetFileResponse::from)
                     .toList();
 
-                return DatasetResponse.from(dataset, datasetFileResponse);
+                return DatasetResponse.from(dataset, datasetFileResponse, romajiConverterDomainService.convert(dataset.getTitle()));
             }).toList();
 
         return OpenDataSearcherResponse.builder()

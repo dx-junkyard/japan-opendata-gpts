@@ -12,11 +12,12 @@ import java.util.Objects;
 @Builder
 public record DatasetResponse(
     @NonNull String title,
+    @NonNull String titleEn,
     @Nullable String description,
     @Nullable String datasetUrl,
     @NonNull List<DatasetFileResponse> files) implements Serializable {
 
-    public static DatasetResponse from(final Dataset dataset, @Nullable final List<DatasetFileResponse> overriddenFiles) {
+    public static DatasetResponse from(final Dataset dataset, @Nullable final List<DatasetFileResponse> overriddenFiles, final String titleEn) {
         // 上書き用のオープンデータがあればそれを使う
         final var filesResponse = Objects.nonNull(overriddenFiles)
             ? overriddenFiles
@@ -24,6 +25,7 @@ public record DatasetResponse(
 
         return DatasetResponse.builder()
             .title(dataset.getTitle())
+            .titleEn(titleEn)
             .description(dataset.getDescription())
             .datasetUrl(dataset.getDatasetUrl())
             .files(filesResponse)
