@@ -30,7 +30,7 @@ public class JapanOpenDataRepository {
         Optional.ofNullable(request.q())
             .ifPresent(q -> searchRequestParameterMap.put("q", q));
         Optional.ofNullable(request.fq())
-            .ifPresent(fq -> searchRequestParameterMap.put("fqq", fq));
+            .ifPresent(fq -> searchRequestParameterMap.put("fq", fq));
 
         return japanOpenDataClient.get()
             .uri(uriBuilder -> {
