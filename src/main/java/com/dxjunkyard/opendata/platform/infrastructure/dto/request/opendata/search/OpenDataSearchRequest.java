@@ -34,7 +34,7 @@ public record OpenDataSearchRequest(
             .collect(Collectors.joining(" OR "));
 
         final String groups = searchCondition.getCategorySearchCondition().getCategoryIdSet().stream()
-            .map(categoryId -> "tag:" + categoryId.toString())
+            .map(categoryId -> "tags:" + categoryId.toString())
             .collect(Collectors.joining(" AND "));
 
         final String resFormat = searchCondition.getFormatSet().stream()
