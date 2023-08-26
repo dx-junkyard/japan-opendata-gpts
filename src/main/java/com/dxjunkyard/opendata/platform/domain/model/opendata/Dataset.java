@@ -19,6 +19,8 @@ public class Dataset {
     protected final String description;
     @Nullable
     protected final String datasetUrl;
+    @Nullable
+    protected final String license;
     @NonNull
     protected final List<DatasetFile> files;
 }
