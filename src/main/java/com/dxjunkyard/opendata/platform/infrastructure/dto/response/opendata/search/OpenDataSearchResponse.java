@@ -51,6 +51,7 @@ public record OpenDataSearchResponse(
         String type,
         String metadataModified,
         String metadataCreated,
+        String licenseTitle,
         List<ResourceResponse> resources
     ) {
         @NonNull
@@ -59,6 +60,7 @@ public record OpenDataSearchResponse(
                 .title(xckanTitle)
                 .description(Optional.ofNullable(xckanDescription).filter(StringUtils::isNotBlank).orElse(null))
                 .datasetUrl(Optional.ofNullable(xckanSiteUrl).filter(StringUtils::isNotBlank).orElse(null))
+                .license(Optional.ofNullable(licenseTitle).filter(StringUtils::isNotBlank).orElse(null))
                 .files(resources.stream()
                     .map(ResourceResponse::toDatasetFile)
                     .toList())
