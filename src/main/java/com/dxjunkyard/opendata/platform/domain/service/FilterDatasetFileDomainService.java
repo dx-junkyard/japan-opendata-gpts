@@ -19,8 +19,9 @@ public class FilterDatasetFileDomainService {
         return datasetFiles.stream()
             // nullを最後尾に持っていく
             .sorted(Comparator
-                .comparing(DatasetFile::getLastModifiedTimestamp, Comparator.nullsFirst(Comparator.naturalOrder())).reversed() // 最新のものが先にくるように逆順ソート
-                .thenComparing(file -> !file.isMatched(searchCondition)) // isMatchedがtrueのものが先にくるようにソート
+                .comparing(DatasetFile::getLastModifiedTimestamp, Comparator.nullsFirst(Comparator.naturalOrder()))
+                .thenComparing(file -> file.getMatchScore(searchCondition), Comparator.nullsFirst(Comparator.naturalOrder()))
+                .reversed() // 降順に変更する
             )
             .limit(MAX_SIZE)
             .collect(Collectors.toList());

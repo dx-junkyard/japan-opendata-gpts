@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
@@ -15,6 +16,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @EqualsAndHashCode
 @Builder
+@Slf4j
 public class DatasetFile {
 
     @NonNull
@@ -36,15 +38,16 @@ public class DatasetFile {
             .orElse(null);
     }
 
-    public boolean isMatched(final SearchCondition searchCondition) {
+    public Integer getMatchScore(final SearchCondition searchCondition) {
 
         // キーワードが存在しない場合は、全てのデータをマッチさせる
         if (!searchCondition.existsKeyword()) {
-            return true;
+            return 0;
         }
 
-        final boolean isMatchedTitle = StringUtils.containsAny(title, searchCondition.getAllQuerySet().toArray(String[]::new));
+        return searchCondition.getAllQuerySet().stream()
+            .mapToInt(query -> StringUtils.countMatches(title, query))
+            .sum();
 
-        return isMatchedTitle;
     }
 }
