@@ -15,6 +15,7 @@ public record DatasetResponse(
     @Nullable String title,
     @Nullable String description,
     @Nullable String datasetUrl,
+    @Nullable String license,
     @NonNull List<DatasetFileResponse> files) implements Serializable {
 
     public static DatasetResponse from(final Dataset dataset, @Nullable final List<DatasetFileResponse> overriddenFiles, @Nullable final String titleEn) {
@@ -27,6 +28,7 @@ public record DatasetResponse(
             .title(StringUtils.isNoneBlank(titleEn) ? titleEn : dataset.getTitle())
             .description(dataset.getDescription())
             .datasetUrl(dataset.getDatasetUrl())
+            .license(dataset.getLicense())
             .files(filesResponse)
             .build();
     }
