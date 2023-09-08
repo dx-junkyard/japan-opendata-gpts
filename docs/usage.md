@@ -4,6 +4,12 @@
 
 この資料では、ChatGPTを使用してJapan Opendataプラグインを活用し、東京都の子育てに関する施設の一覧を検索・保存する方法を学びます。
 
+## Japan Opendataのインストール方法
+ChatGPT Pluginの機能をONにして、プラグインストアで「Japan Opendata」と検索してインストールしてください。
+
+<img width="472" alt="image" src="https://github.com/FooQoo/japan-opendata-chatgpt-plugin/assets/14051784/442236a3-2ced-4eb4-b3df-8b60c13707b2">
+
+
 ## 題材となるプロンプト
 
 Japan OpendataプラグインをONにして、以下のプロンプトを送ることで、東京都の子育てに関する施設の一覧を検索・保存できます。
