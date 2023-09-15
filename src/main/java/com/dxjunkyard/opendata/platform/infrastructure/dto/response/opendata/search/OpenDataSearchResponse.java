@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -49,6 +48,7 @@ public record OpenDataSearchResponse(
         String xckanTitle,
         String xckanSiteName,
         String xckanSiteUrl,
+        String xckanLastUpdated,
         String xckanDescription,
         String type,
         String metadataModified,
@@ -62,6 +62,7 @@ public record OpenDataSearchResponse(
             return Dataset.builder()
                 .title(xckanTitle)
                 .siteName(xckanSiteName)
+                .lastModified(xckanLastUpdated)
                 .description(Optional.ofNullable(xckanDescription).filter(StringUtils::isNotBlank).orElse(null))
                 .datasetUrl(Optional.ofNullable(xckanSiteUrl).filter(StringUtils::isNotBlank).orElse(null))
                 .license(Optional.ofNullable(licenseTitle).filter(StringUtils::isNotBlank).orElse(null))

@@ -17,6 +17,8 @@ public class Dataset {
     private final String title;
     @NonNull
     private final String siteName;
+    @NonNull
+    private final String lastModified;
     @Nullable
     private final String description;
     @Nullable

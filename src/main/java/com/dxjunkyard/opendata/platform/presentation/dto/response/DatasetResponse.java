@@ -14,6 +14,7 @@ import java.util.Objects;
 public record DatasetResponse(
     @Nullable String title,
     @NonNull String siteName,
+    @NonNull String lastModified,
     @Nullable String datasetUrl,
     @Nullable String license,
     @NonNull List<DatasetFileResponse> files,
@@ -29,6 +30,7 @@ public record DatasetResponse(
         return DatasetResponse.builder()
             .title(StringUtils.isNoneBlank(titleEn) ? titleEn : dataset.getTitle())
             .siteName(dataset.getSiteName())
+            .lastModified(dataset.getLastModified())
             .datasetUrl(dataset.getDatasetUrl())
             .license(dataset.getLicense())
             .files(filesResponse)
