@@ -48,36 +48,4 @@ public class SwaggerConfig {
                 .version(version)
                 .description(description));
     }
-
-    @Bean
-    @NonNull
-    public OperationCustomizer operationCustomizer(
-        final CategoryNameToIdConverter categoryNameToIdConverter,
-        final OrganizationNameToIdConverter organizationCountMap
-    ) {
-
-        final Set<String> organizationNameSet = organizationCountMap.getOrganizationNameSet();
-
-        final Set<String> categoryNameSet = categoryNameToIdConverter.getCategoryNameSet();
-
-        return (operation, handlerMethod) -> {
-
-            if ("searchOpenData".equals(handlerMethod.getMethod().getName())) {
-                operation.getParameters().forEach(parameter -> {
-                    switch (parameter.getName()) {
-                        case "organization" ->
-                            parameter.setDescription(parameter.getDescription() + " Select one of the following options. e.g. " + StringUtils.join(organizationNameSet, ",") + ".");
-                        case "category" ->
-                            parameter.setDescription(parameter.getDescription() + " Options of category are " + StringUtils.join(categoryNameSet, ",") + ".");
-                        case "format" ->
-                            parameter.setDescription(parameter.getDescription() + " Option of Format are " + StringUtils.join(OpenDataFormat.getValues(), ",") + ".");
-                        default -> {
-                        }
-                    }
-                });
-            }
-
-            return operation;
-        };
-    }
 }

@@ -14,7 +14,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record OpenDataSearcherRequest(
 
@@ -27,14 +26,6 @@ public record OpenDataSearcherRequest(
     @Nullable
     String keyword,
 
-    @Parameter(description = "Search organization.")
-    @Nullable
-    String organization,
-
-    @Parameter(description = "Search category. If you want to search for multiple categories, separate them with spaces.")
-    @Nullable
-    String category,
-
     @Parameter(description = "Search format. If you want to search for multiple formats, separate them with spaces. Default is unspecified.")
     @Nullable
     String format,
@@ -46,37 +37,13 @@ public record OpenDataSearcherRequest(
     public OpenDataSearcherRequest(
         final Integer page,
         final String keyword,
-        final String organization,
-        final String category,
         final String format,
         final Language language
     ) {
         this.page = Optional.ofNullable(page).orElse(1);
         this.keyword = keyword;
-        this.organization = organization;
-        this.category = category;
         this.format = format;
         this.language = language;
-    }
-
-    @NonNull
-    public Set<String> organizationSet() {
-
-        if (StringUtils.isBlank(organization)) {
-            return Set.of();
-        }
-
-        return Set.of(organization);
-    }
-
-    @NonNull
-    public Set<String> categorySet() {
-        if (StringUtils.isBlank(category)) {
-            return Set.of();
-        }
-
-        return Stream.of(category.split(StringUtils.SPACE))
-            .collect(Collectors.toUnmodifiableSet());
     }
 
     @NonNull

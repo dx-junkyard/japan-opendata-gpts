@@ -29,18 +29,6 @@ public class UrlBuilderDomainService {
                 builder.queryParam("q", "{q}");
             });
 
-        searchCondition.getOrganizationSearchCondition().getOrganizationIdSet()
-            .forEach(organizationId -> {
-                map.put("organization_" + organizationId.getValue(), "organization:" + organizationId.getValue());
-                builder.queryParam("fq", "{organization_" + organizationId.getValue() + "}");
-            });
-
-        searchCondition.getCategorySearchCondition().getCategoryIdSet()
-            .forEach(categoryId -> {
-                map.put("groups_" + categoryId.getValue(), "tag:" + categoryId.getValue());
-                builder.queryParam("fq", "{groups_" + categoryId.getValue() + "}");
-            });
-
         searchCondition.getFormatSet()
             .forEach(format -> {
                 map.put("res_format_" + format.getValue(), "format:" + format.getValue());
