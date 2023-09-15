@@ -15,7 +15,6 @@ import java.io.Serializable;
 public record OpenDataSearcherErrorResponse(
     @Schema(description = "Http Status.")
     @NonNull Integer status,
-
     @Schema(description = "Title of error.")
     @NonNull String title
 ) implements Serializable {

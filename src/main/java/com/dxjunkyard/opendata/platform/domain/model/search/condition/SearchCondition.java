@@ -27,12 +27,6 @@ public class SearchCondition {
     private final KeywordSearchCondition keywordSearchCondition;
 
     @NonNull
-    private final OrganizationSearchCondition organizationSearchCondition;
-
-    @NonNull
-    private final CategorySearchCondition categorySearchCondition;
-
-    @NonNull
     private final Set<OpenDataFormat> formatSet;
 
     @NonNull
@@ -48,15 +42,11 @@ public class SearchCondition {
     }
 
     public Set<String> getAllQuerySet() {
-        return Stream.of(
-            keywordSearchCondition.getKeywordSet(),
-            organizationSearchCondition.getOrganizationQuery(),
-            categorySearchCondition.getCategoryQuery()
-        ).flatMap(Collection::stream).collect(Collectors.toUnmodifiableSet());
+        return keywordSearchCondition.getKeywordSet();
     }
 
     public String getAllQuery() {
-        return String.join(StringUtils.SPACE, getAllQuerySet());
+        return String.join(" AND ", getAllQuerySet());
     }
 
     @Nullable

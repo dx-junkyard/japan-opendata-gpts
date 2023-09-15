@@ -22,36 +22,19 @@ public record OpenDataSearchRequest(
     @Nullable String q
 ) implements Serializable {
 
-    private static final Integer DEFAULT_ROWS = 5;
+    private static final Integer DEFAULT_ROWS = 10;
 
     @NonNull
     static public OpenDataSearchRequest from(final SearchCondition searchCondition) {
 
         final String q = searchCondition.getAllQuery();
 
-        final String organization = searchCondition.getOrganizationSearchCondition().getOrganizationIdSet().stream()
-            .map(organizationId -> "organization:" + organizationId.toString())
-            .collect(Collectors.joining(" OR "));
-
-        final String groups = searchCondition.getCategorySearchCondition().getCategoryIdSet().stream()
-            .map(categoryId -> "tags:" + categoryId.toString())
-            .collect(Collectors.joining(" AND "));
-
         final String resFormat = searchCondition.getFormatSet().stream()
             .map(openDataFormat -> "res_format:" + openDataFormat.toString())
             .collect(Collectors.joining(" AND "));
 
-        final String fq = Stream.of(
-                Optional.of(organization).filter(StringUtils::isNotBlank)
-                    .map(value -> "(" + value + ")").orElse(""),
-                Optional.of(groups).filter(StringUtils::isNotBlank)
-                    .map(value -> "(" + value + ")").orElse(""),
-                Optional.of(resFormat).filter(StringUtils::isNotBlank)
-                    .map(value -> "(" + value + ")").orElse("")
-            )
-            .filter(StringUtils::isNotBlank)
-            .collect(Collectors.joining(" AND ")
-            );
+        final String fq = Optional.of(resFormat).filter(StringUtils::isNotBlank)
+            .map(value -> "(" + value + ")").orElse("");
 
         return OpenDataSearchRequest.builder()
             .q(Optional.of(q).filter(StringUtils::isNotBlank).orElse(null))

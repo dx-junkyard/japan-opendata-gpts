@@ -6,6 +6,7 @@ import com.dxjunkyard.opendata.platform.domain.model.opendata.OpenData;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.lang.NonNull;
 
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -52,18 +54,21 @@ public record OpenDataSearchResponse(
         String metadataModified,
         String metadataCreated,
         String licenseTitle,
-        List<ResourceResponse> resources
+        List<ResourceResponse> resources,
+        List<TagResponse> tags
     ) {
         @NonNull
         public Dataset toDataset() {
             return Dataset.builder()
                 .title(xckanTitle)
+                .siteName(xckanSiteName)
                 .description(Optional.ofNullable(xckanDescription).filter(StringUtils::isNotBlank).orElse(null))
                 .datasetUrl(Optional.ofNullable(xckanSiteUrl).filter(StringUtils::isNotBlank).orElse(null))
                 .license(Optional.ofNullable(licenseTitle).filter(StringUtils::isNotBlank).orElse(null))
                 .files(resources.stream()
                     .map(ResourceResponse::toDatasetFile)
                     .toList())
+                .tags(CollectionUtils.emptyIfNull(tags).stream().map(TagResponse::name).toList())
                 .build();
         }
     }
@@ -96,4 +101,10 @@ public record OpenDataSearchResponse(
                 .build();
         }
     }
+
+    @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public record TagResponse(
+        String name
+    ) {}
 }
