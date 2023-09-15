@@ -25,29 +25,16 @@ public class OpenDataSearcherFactory {
 
     private final FilterDatasetFileDomainService filterDatasetFileDomainService;
 
-    private final OrganizationNameToIdConverter OrganizationNameToIdConverter;
-
-    private final CategoryNameToIdConverter categoryNameToIdConverter;
-
     private final RomajiConverterDomainService romajiConverterDomainService;
 
     @NonNull
     public SearchCondition build(final OpenDataSearcherRequest request) {
-        final OrganizationSearchCondition organizationSearchCondition = OrganizationSearchCondition.of(
-            OrganizationNameToIdConverter,
-            request.organizationSet());
-
-        final CategorySearchCondition categorySearchCondition = CategorySearchCondition.of(
-            categoryNameToIdConverter,
-            request.categorySet());
 
         final KeywordSearchCondition keywordSearchCondition = KeywordSearchCondition.of(request.keyword());
 
         return SearchCondition.builder()
             .page(request.page())
             .keywordSearchCondition(keywordSearchCondition)
-            .organizationSearchCondition(organizationSearchCondition)
-            .categorySearchCondition(categorySearchCondition)
             .formatSet(request.formatSet())
             .language(request.language())
             .build();

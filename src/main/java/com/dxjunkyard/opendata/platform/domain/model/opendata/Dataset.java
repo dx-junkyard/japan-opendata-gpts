@@ -14,13 +14,17 @@ import java.util.List;
 public class Dataset {
 
     @NonNull
-    protected final String title;
-    @Nullable
-    protected final String description;
-    @Nullable
-    protected final String datasetUrl;
-    @Nullable
-    protected final String license;
+    private final String title;
     @NonNull
-    protected final List<DatasetFile> files;
+    private final String siteName;
+    @Nullable
+    private final String description;
+    @Nullable
+    private final String datasetUrl;
+    @Nullable
+    private final String license;
+    @NonNull
+    private final List<DatasetFile> files;
+    @NonNull
+    private final List<String> tags;
 }

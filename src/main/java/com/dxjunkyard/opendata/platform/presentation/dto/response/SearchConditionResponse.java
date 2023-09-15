@@ -6,23 +6,21 @@ import org.springframework.lang.NonNull;
 import java.io.Serializable;
 
 public record SearchConditionResponse(
+    Integer page,
     String keyword,
-    String organization,
-    String category,
     String format
 ) implements Serializable {
 
     @NonNull
     public static SearchConditionResponse empty() {
-        return new SearchConditionResponse(null, null, null, null);
+        return new SearchConditionResponse(1, null,  null);
     }
 
     @NonNull
     public static SearchConditionResponse from(final SearchCondition searchCondition) {
         return new SearchConditionResponse(
+            searchCondition.getPage(),
             searchCondition.getAllQuery(),
-            searchCondition.getOrganizationSearchCondition().getOrganization(),
-            searchCondition.getCategorySearchCondition().getCategory(),
             searchCondition.getFormat()
         );
     }
