@@ -14,7 +14,9 @@ public class KeywordSearchCondition {
 
     public static KeywordSearchCondition of(final String queries) {
         return new KeywordSearchCondition(Stream.of(StringUtils
-            .split(StringUtils.defaultString(queries), StringUtils.SPACE)).collect(Collectors.toUnmodifiableSet()));
+            .split(StringUtils.defaultString(queries), StringUtils.SPACE))
+            .map(query -> "\"" + query + "\"")
+            .collect(Collectors.toUnmodifiableSet()));
     }
 
     Set<String> getKeywordSet() {
