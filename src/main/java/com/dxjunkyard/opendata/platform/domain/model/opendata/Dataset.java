@@ -27,6 +27,4 @@ public class Dataset {
     private final String license;
     @NonNull
     private final List<DatasetFile> files;
-    @NonNull
-    private final List<String> tags;
 }
