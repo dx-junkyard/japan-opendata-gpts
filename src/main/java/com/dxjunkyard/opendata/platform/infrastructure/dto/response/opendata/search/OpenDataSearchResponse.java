@@ -54,8 +54,7 @@ public record OpenDataSearchResponse(
         String metadataModified,
         String metadataCreated,
         String licenseTitle,
-        List<ResourceResponse> resources,
-        List<TagResponse> tags
+        List<ResourceResponse> resources
     ) {
         @NonNull
         public Dataset toDataset() {
@@ -69,7 +68,6 @@ public record OpenDataSearchResponse(
                 .files(resources.stream()
                     .map(ResourceResponse::toDatasetFile)
                     .toList())
-                .tags(CollectionUtils.emptyIfNull(tags).stream().map(TagResponse::name).toList())
                 .build();
         }
     }
@@ -102,10 +100,4 @@ public record OpenDataSearchResponse(
                 .build();
         }
     }
-
-    @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public record TagResponse(
-        String name
-    ) {}
 }

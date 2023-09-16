@@ -17,8 +17,7 @@ public record DatasetResponse(
     @NonNull String lastModified,
     @Nullable String datasetUrl,
     @Nullable String license,
-    @NonNull List<DatasetFileResponse> files,
-    @NonNull List<String> tags
+    @NonNull List<DatasetFileResponse> files
 ) implements Serializable {
 
     public static DatasetResponse from(final Dataset dataset, @Nullable final List<DatasetFileResponse> overriddenFiles, @Nullable final String titleEn) {
@@ -34,7 +33,6 @@ public record DatasetResponse(
             .datasetUrl(dataset.getDatasetUrl())
             .license(dataset.getLicense())
             .files(filesResponse)
-            .tags(dataset.getTags())
             .build();
     }
 
