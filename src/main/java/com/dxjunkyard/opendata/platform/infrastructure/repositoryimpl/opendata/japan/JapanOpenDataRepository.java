@@ -1,8 +1,8 @@
 package com.dxjunkyard.opendata.platform.infrastructure.repositoryimpl.opendata.japan;
 
 import com.dxjunkyard.opendata.platform.infrastructure.dto.request.opendata.search.OpenDataSearchRequest;
-import com.dxjunkyard.opendata.platform.infrastructure.dto.response.opendata.organization.OpenDataOrganizationResponse;
 import com.dxjunkyard.opendata.platform.infrastructure.dto.response.opendata.category.OpenDataCategoryResponse;
+import com.dxjunkyard.opendata.platform.infrastructure.dto.response.opendata.organization.OpenDataOrganizationResponse;
 import com.dxjunkyard.opendata.platform.infrastructure.dto.response.opendata.search.OpenDataSearchResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.lang.NonNull;
