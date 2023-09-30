@@ -10,10 +10,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
-import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @RequiredArgsConstructor
 @Getter
@@ -24,6 +22,9 @@ public class SearchCondition {
     private final Integer page;
 
     @NonNull
+    private final AreaSearchCondition areaSearchCondition;
+
+    @NonNull
     private final KeywordSearchCondition keywordSearchCondition;
 
     @NonNull
@@ -32,10 +33,24 @@ public class SearchCondition {
     @NonNull
     private final Language language;
 
+    @Nullable
+    public String getRawArea() {
+        return areaSearchCondition.getRaw();
+    }
+
+    @Nullable
+    public String getRawKeyword() {
+        return keywordSearchCondition.getRaw();
+    }
+
+    @NonNull
+    public String getArea() {
+        return areaSearchCondition.getArea();
+    }
+
     public boolean isJapanese() {
         return Language.JAPANESE == language;
     }
-
 
     public boolean existsKeyword() {
         return CollectionUtils.isNotEmpty(getAllQuerySet());
@@ -46,7 +61,7 @@ public class SearchCondition {
     }
 
     public String getAllQuery() {
-        return String.join(" AND ", getAllQuerySet());
+        return String.join(" ", getAllQuerySet());
     }
 
     @Nullable

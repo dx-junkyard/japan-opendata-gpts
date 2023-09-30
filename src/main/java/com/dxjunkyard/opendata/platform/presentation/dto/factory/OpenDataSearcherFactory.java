@@ -1,11 +1,8 @@
 package com.dxjunkyard.opendata.platform.presentation.dto.factory;
 
 import com.dxjunkyard.opendata.platform.domain.model.opendata.OpenData;
-import com.dxjunkyard.opendata.platform.domain.model.search.CategoryNameToIdConverter;
-import com.dxjunkyard.opendata.platform.domain.model.search.OrganizationNameToIdConverter;
-import com.dxjunkyard.opendata.platform.domain.model.search.condition.CategorySearchCondition;
+import com.dxjunkyard.opendata.platform.domain.model.search.condition.AreaSearchCondition;
 import com.dxjunkyard.opendata.platform.domain.model.search.condition.KeywordSearchCondition;
-import com.dxjunkyard.opendata.platform.domain.model.search.condition.OrganizationSearchCondition;
 import com.dxjunkyard.opendata.platform.domain.model.search.condition.SearchCondition;
 import com.dxjunkyard.opendata.platform.domain.service.FilterDatasetFileDomainService;
 import com.dxjunkyard.opendata.platform.domain.service.RomajiConverterDomainService;
@@ -15,6 +12,7 @@ import com.dxjunkyard.opendata.platform.presentation.dto.response.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
+
 import java.util.List;
 
 @Component
@@ -31,9 +29,11 @@ public class OpenDataSearcherFactory {
     public SearchCondition build(final OpenDataSearcherRequest request) {
 
         final KeywordSearchCondition keywordSearchCondition = KeywordSearchCondition.of(request.keyword());
+        final AreaSearchCondition areaSearchCondition = AreaSearchCondition.of(request.area());
 
         return SearchCondition.builder()
             .page(request.page())
+            .areaSearchCondition(areaSearchCondition)
             .keywordSearchCondition(keywordSearchCondition)
             .formatSet(request.formatSet())
             .language(request.language())

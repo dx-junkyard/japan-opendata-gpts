@@ -9,6 +9,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Component
 public class UrlBuilderDomainService {
@@ -22,7 +24,12 @@ public class UrlBuilderDomainService {
 
         final var builder = UriComponentsBuilder.fromHttpUrl(CATALOG_BASE_URL);
 
-        Optional.ofNullable(searchCondition.getAllQuery())
+        final String q = Stream.of(searchCondition.getArea(), searchCondition.getAllQuery())
+            .filter(StringUtils::isNotBlank)
+            .map(e -> String.format("(%s)", e))
+            .collect(Collectors.joining(" AND "));
+
+        Optional.of(q)
             .filter(StringUtils::isNotBlank)
             .ifPresent(keyword -> {
                 map.put("q", keyword);

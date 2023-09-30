@@ -22,6 +22,10 @@ public record OpenDataSearcherRequest(
     @Min(1)
     Integer page,
 
+    @Parameter(description = "Search area. Please enter the geographical area you are interested in. You can specify a region, city, or prefecture.")
+    @Nullable
+    String area,
+
     @Parameter(description = "Search keyword. If you want to search for multiple keywords, separate them with spaces.")
     @Nullable
     String keyword,
@@ -36,11 +40,13 @@ public record OpenDataSearcherRequest(
 
     public OpenDataSearcherRequest(
         final Integer page,
+        final String area,
         final String keyword,
         final String format,
         final Language language
     ) {
         this.page = Optional.ofNullable(page).orElse(1);
+        this.area = area;
         this.keyword = keyword;
         this.format = format;
         this.language = language;
