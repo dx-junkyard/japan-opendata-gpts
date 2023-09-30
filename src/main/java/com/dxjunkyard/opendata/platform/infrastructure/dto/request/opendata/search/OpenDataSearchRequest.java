@@ -7,6 +7,7 @@ import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -27,7 +28,10 @@ public record OpenDataSearchRequest(
     @NonNull
     static public OpenDataSearchRequest from(final SearchCondition searchCondition) {
 
-        final String q = searchCondition.getAllQuery();
+        final String q = Stream.of(searchCondition.getArea(), searchCondition.getAllQuery())
+            .filter(StringUtils::isNotBlank)
+            .map(e -> String.format("(%s)", e))
+            .collect(Collectors.joining(" AND "));
 
         final String resFormat = searchCondition.getFormatSet().stream()
             .map(openDataFormat -> "res_format:" + openDataFormat.toString())

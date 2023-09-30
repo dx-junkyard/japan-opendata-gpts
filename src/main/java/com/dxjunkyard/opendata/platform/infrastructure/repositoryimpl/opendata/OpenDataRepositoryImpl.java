@@ -7,8 +7,8 @@ import com.dxjunkyard.opendata.platform.domain.model.search.condition.SearchCond
 import com.dxjunkyard.opendata.platform.domain.repository.opendata.OpenDataRepository;
 import com.dxjunkyard.opendata.platform.infrastructure.dto.factory.OpenDataSearchFactory;
 import com.dxjunkyard.opendata.platform.infrastructure.dto.request.opendata.search.OpenDataSearchRequest;
-import com.dxjunkyard.opendata.platform.infrastructure.dto.response.opendata.organization.OpenDataOrganizationResponse;
 import com.dxjunkyard.opendata.platform.infrastructure.dto.response.opendata.category.OpenDataCategoryResponse;
+import com.dxjunkyard.opendata.platform.infrastructure.dto.response.opendata.organization.OpenDataOrganizationResponse;
 import com.dxjunkyard.opendata.platform.infrastructure.dto.response.opendata.search.OpenDataSearchResponse;
 import com.dxjunkyard.opendata.platform.infrastructure.repositoryimpl.opendata.japan.JapanOpenDataRepository;
 import lombok.RequiredArgsConstructor;
