@@ -14,7 +14,7 @@ public record SearchConditionResponse(
 
     @NonNull
     public static SearchConditionResponse empty() {
-        return new SearchConditionResponse(1, null, null,  null);
+        return new SearchConditionResponse(1, null, null, null);
     }
 
     @NonNull

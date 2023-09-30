@@ -28,7 +28,7 @@ public class RestExceptionHandler {
     /**
      * ValidationExceptionの例外ハンドリング.
      *
-     * @param e                 ValidationException
+     * @param e ValidationException
      * @return Mono<OpenDataSearcherErrorResponse>
      */
     @ExceptionHandler
@@ -42,7 +42,7 @@ public class RestExceptionHandler {
     /**
      * TypeMismatchExceptionの例外ハンドリング.
      *
-     * @param e                 TypeMismatchException
+     * @param e TypeMismatchException
      * @return Mono<OpenDataSearcherErrorResponse>
      */
     @ExceptionHandler
@@ -56,7 +56,7 @@ public class RestExceptionHandler {
     /**
      * WebExchangeBindExceptionの例外ハンドリング.
      *
-     * @param e                 TypeMismatchException
+     * @param e TypeMismatchException
      * @return Mono<OpenDataSearcherErrorResponse>
      */
     @ExceptionHandler
@@ -70,7 +70,7 @@ public class RestExceptionHandler {
     /**
      * その他の例外ハンドリング.
      *
-     * @param e                 例外
+     * @param e 例外
      * @return Mono<OpenDataSearcherErrorResponse>
      */
     @ExceptionHandler

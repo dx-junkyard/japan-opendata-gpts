@@ -52,7 +52,6 @@ public record OpenDataOrganizationResponse(
     }
 
 
-
     @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
     @JsonIgnoreProperties(ignoreUnknown = true)
     public record ResultResponse(
