@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
@@ -16,7 +15,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @EqualsAndHashCode
 @Builder
-@Slf4j
 public class DatasetFile {
 
     @NonNull

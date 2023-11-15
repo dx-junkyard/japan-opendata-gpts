@@ -22,7 +22,7 @@ public record OpenDataSearchRequest(
     @Nullable String q
 ) implements Serializable {
 
-    private static final Integer DEFAULT_ROWS = 10;
+    private static final Integer DEFAULT_ROWS = 30;
 
     @NonNull
     static public OpenDataSearchRequest from(final SearchCondition searchCondition) {
