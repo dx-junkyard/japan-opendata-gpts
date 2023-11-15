@@ -1,6 +1,6 @@
 ai-plugin:
   api:
-    url: https://japan-opendata-chatgpt-plugin.fooqoo56.com/openapi.json
-  logo-url: https://japan-opendata-chatgpt-plugin.s3.amazonaws.com/logo.png
+    url: https://japan-opendata.dx-junkyard.com/openapi.json
+  logo-url: https://asset.japan-opendata.dx-junkyard.com/japan-opendata.png
   contact-email: fooqoofooqoo56@gmail.com
-  legal-info-url: https://japan-opendata-chatgpt-plugin.fooqoo56.com/term-of-use
+  legal-info-url: https://japan-opendata.dx-junkyard.com/term-of-use
