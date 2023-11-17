@@ -34,7 +34,7 @@ public record OpenDataSearcherRequest(
     @Nullable
     String format,
 
-    @Parameter(description = "Asked language. select only JAPANESE or OTHER.", required = true)
+    @Parameter(description = "Asked language. select only JAPANESE or OTHER. Default is Japanese.", required = true)
     @NonNull Language language
 ) {
 
