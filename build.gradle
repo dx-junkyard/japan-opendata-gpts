@@ -29,7 +29,7 @@ dependencies {
     implementation(
         'org.springframework.boot:spring-boot-starter-validation',
         'org.springframework.boot:spring-boot-starter-webflux',
-        'org.springdoc:springdoc-openapi-starter-webflux-ui:2.2.0',
+        'org.springdoc:springdoc-openapi-starter-webflux-ui:2.3.0',
         'org.springframework.boot:spring-boot-starter-actuator',
         'org.apache.commons:commons-collections4:4.4',
         'com.atilika.kuromoji:kuromoji-ipadic:0.9.0',
