@@ -9,7 +9,7 @@ plugins {
 }
 
 group = 'com.dxjunkyard'
-version = '0.0.3-beta'
+version = '0.0.4-beta'
 
 java {
     sourceCompatibility = '17'
