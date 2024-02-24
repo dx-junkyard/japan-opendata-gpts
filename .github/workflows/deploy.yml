@@ -4,9 +4,6 @@
 name: Build and deploy JAR app to Azure Web App - japan-opendata-gpts
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
