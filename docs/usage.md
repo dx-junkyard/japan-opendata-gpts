@@ -1,18 +1,15 @@
-# Japan Opendataプラグインの使い方
+# Japan Opendata GPTsの使い方
 
 ## 目的
 
-この資料では、ChatGPTを使用してJapan Opendataプラグインを活用し、東京都の子育てに関する施設の一覧を検索・保存する方法を学びます。
+この資料では、ChatGPTを使用してJapan Opendata GPTsを活用し、東京都の子育てに関する施設の一覧を検索・保存する方法を学びます。
 
 ## Japan Opendataのインストール方法
-ChatGPT Pluginの機能をONにして、プラグインストアで「Japan Opendata」と検索してインストールしてください。
-
-<img width="472" alt="image" src="https://github.com/FooQoo/japan-opendata-chatgpt-plugin/assets/14051784/442236a3-2ced-4eb4-b3df-8b60c13707b2">
-
+GPTsストアで「Japan Opendata」と検索してインストールしてください。
 
 ## 題材となるプロンプト
 
-Japan OpendataプラグインをONにして、以下のプロンプトを送ることで、東京都の子育てに関する施設の一覧を検索・保存できます。
+Japan Opendata GPTsをONにして、以下のプロンプトを送ることで、東京都の子育てに関する施設の一覧を検索・保存できます。
 
 ### プロンプト
 ```
@@ -177,7 +174,7 @@ ChatGPTにjapan_opendata.searchOpenData APIを使用して、東京都の子育�
 
 ## まとめ
 
-このハンズオンを通じて、Japan Opendataプラグインを使用してオープンデータを検索・保存する基本的な手順を学びました。  
+このハンズオンを通じて、Japan Opendata GPTsを使用してオープンデータを検索・保存する基本的な手順を学びました。  
 実際のデータ検索や利用に際しては、具体的な要件や目的に応じて手順を調整することが必要です。
 
 ## おまけ:演習
@@ -194,7 +191,7 @@ ChatGPTにjapan_opendata.searchOpenData APIを使用して、東京都の子育�
 ステップごとに考えてみましょう。
 
 #ステップ1
-Japan OpenDataのプラグインを利用して、Aに関するオープンデータを5件教えてください。
+Japan OpenDataの GPTsを利用して、Aに関するオープンデータを5件教えてください。
 ##Aに関する適切なオープンデータが見つかった場合
 出力は、
 ・データセットのタイトル
@@ -238,5 +235,5 @@ B3までの出力を終えたら、
 ・データセットのリソースの一覧
 ・フォーマット
 ・ライセンス
-なお、Japan OpenDataのプラグインを用いて再度検索し、リソースのダウンロードリンクを含めてください。
+なお、Japan OpenDataの GPTsを用いて再度検索し、リソースのダウンロードリンクを含めてください。
 ```

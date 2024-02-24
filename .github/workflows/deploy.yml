@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy JAR app to Azure Web App - japan-opendata-chatgpt-plugin
+name: Build and deploy JAR app to Azure Web App - japan-opendata-gpts
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
           distribution: "temurin"
 
       - name: Build with Maven
-        uses: gradle/gradle-build-action@982da8e78c05368c70dac0351bb82647a9e9a5d2 # v2.11.1
+        uses: gradle/gradle-build-action@29c0906b64b8fc82467890bfb7a0a7ef34bda89e # v3.1.0
         with:
           arguments: clean bootJar
 
@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: "${{ github.workspace }}/build/libs/japan-opendata-chatgpt-plugin.jar"
+          path: "${{ github.workspace }}/build/libs/japan-opendata-gpts.jar"
 
   deploy:
     runs-on: ubuntu-latest
