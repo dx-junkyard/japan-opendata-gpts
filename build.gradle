@@ -54,7 +54,7 @@ dependencies {
         'org.spockframework:spock-spring:2.3-groovy-4.0',
     )
 
-    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.12.0'
+    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.13.0'
 }
 
 test {
