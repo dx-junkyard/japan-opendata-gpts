@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21.0.2_13-jdk
+FROM eclipse-temurin:21.0.5_11-jdk
 
 EXPOSE 8080
 
